@@ -18,7 +18,17 @@ string[] input = new[] {"Mitya", "Mila", "tes", "1"};
 Console.Write("['" + string.Join("', '", input) + "']");
 Console.WriteLine();
 
-string[] response = new string[input.Length];
+// int size = 0;
+
+// for (int i = 0; i < input.Length; i++)
+// {  
+//     if (input[i].Length <= 3)
+//     {
+//         size++;
+//     }
+// }
+
+string[] response = new string[CountLessThanThree (input)];
 int index = 0;
 
 for (int i = 0; i < input.Length; i++)
@@ -36,5 +46,18 @@ for (int i = 0; i < index; i++)
     Console.Write("['" + string.Join("', '", response[i]) + "']");
 }
 
+}
+
+int CountLessThanThree (string[] input)
+{
+int size = 0;
+for (int i = 0; i < input.Length; i++)
+{  
+    if (input[i].Length <= 3)
+    {
+        size++;
+    }
+}
+return size;
 }
 Main();
